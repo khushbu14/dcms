@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth import User
+from django.contrib.auth.models import User
 
 
 class Contributer(models.Model):
@@ -24,7 +24,7 @@ class Reviewer(models.Model):
     def __unicode__(self):
         return self.user.username
 
-class standard_9_mathematics(models.Models):
+class standard_9_mathematics(models.Model):
 
 
     """class:9 subject: Mathematcis """
@@ -33,7 +33,7 @@ class standard_9_mathematics(models.Models):
     video_doc = models.FileField(upload_to='docs', blank=True)
     url = models.URLField(blank=True)
     date_upload = models.DateField(auto_now=True)
-    contributer = models.ForeignKey(AakashCentre) 
+    contributer = models.ForeignKey(Contributer) 
     download_count = models.IntegerField(default=0)
     rating = models.IntegerField(default=0)
     approve = models.BooleanField(default=False)
@@ -46,7 +46,7 @@ class standard_9_mathematics(models.Models):
         self.save()
 
 
-class standard_9_physics(models.Models):
+class standard_9_physics(models.Model):
 
 
     """class:9 subject: Physics """
@@ -55,7 +55,7 @@ class standard_9_physics(models.Models):
     video_doc = models.FileField(upload_to='docs', blank=True)
     url = models.URLField(blank=True)
     date_upload = models.DateField(auto_now=True)
-    contributer = models.ForeignKey(AakashCentre) 
+    contributer = models.ForeignKey(Contributer) 
     download_count = models.IntegerField(default=0)
     rating = models.IntegerField(default=0)
     approve = models.BooleanField(default=False)
@@ -69,7 +69,7 @@ class standard_9_physics(models.Models):
 
 
 
-class standard_9_chemistry(models.Models):
+class standard_9_chemistry(models.Model):
 
 
     """class:9 subject: chemistry """
@@ -78,7 +78,7 @@ class standard_9_chemistry(models.Models):
     video_doc = models.FileField(upload_to='docs', blank=True)
     url = models.URLField(blank=True)
     date_upload = models.DateField(auto_now=True)
-    contributer = models.ForeignKey(AakashCentre) 
+    contributer = models.ForeignKey(Contributer) 
     download_count = models.IntegerField(default=0)
     rating = models.IntegerField(default=0)
     approve = models.BooleanField(default=False)
@@ -91,7 +91,7 @@ class standard_9_chemistry(models.Models):
         self.save()
 
 
-class standard_10_mathematics(models.Models):
+class standard_10_mathematics(models.Model):
 
 
     """class:10 subject: Mathematcis """
@@ -100,7 +100,7 @@ class standard_10_mathematics(models.Models):
     video_doc = models.FileField(upload_to='docs', blank=True)
     url = models.URLField(blank=True)
     date_upload = models.DateField(auto_now=True)
-    contributer = models.ForeignKey(AakashCentre) 
+    contributer = models.ForeignKey(Contributer) 
     download_count = models.IntegerField(default=0)
     rating = models.IntegerField(default=0)
     approve = models.BooleanField(default=False)
@@ -114,16 +114,16 @@ class standard_10_mathematics(models.Models):
 
 
 
-class standard_10_physics(models.Models):
+class standard_10_physics(models.Model):
 
 
-    """class:9 subject: physics """
+    """class:10 subject: physics """
     topic_name = models.CharField(max_length=200, unique=True)
     pdf_doc = models.FileField(upload_to='docs', blank=True)
     video_doc = models.FileField(upload_to='docs', blank=True)
     url = models.URLField(blank=True)
     date_upload = models.DateField(auto_now=True)
-    contributer = models.ForeignKey(AakashCentre) 
+    contributer = models.ForeignKey(Contributer) 
     download_count = models.IntegerField(default=0)
     rating = models.IntegerField(default=0)
     approve = models.BooleanField(default=False)
@@ -135,16 +135,16 @@ class standard_10_physics(models.Models):
         self.download_count += 1
         self.save()
 
-class standard_10_chemistry(models.Models):
+class standard_10_chemistry(models.Model):
 
 
-    """class:9 subject: chemistry """
+    """class:10 subject: chemistry """
     topic_name = models.CharField(max_length=200, unique=True)
     pdf_doc = models.FileField(upload_to='docs', blank=True)
     video_doc = models.FileField(upload_to='docs', blank=True)
     url = models.URLField(blank=True)
     date_upload = models.DateField(auto_now=True)
-    contributer = models.ForeignKey(AakashCentre) 
+    contributer = models.ForeignKey(Contributer) 
     download_count = models.IntegerField(default=0)
     rating = models.IntegerField(default=0)
     approve = models.BooleanField(default=False)
